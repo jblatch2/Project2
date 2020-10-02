@@ -1,0 +1,38 @@
+form.signup,
+form.login {
+  margin-top: 50px;
+}
+
+.navbar {
+  padding: 20px 0;
+}
+.navbar-brand {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #262626;
+}
+.nav-item {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.navbar-light .navbar-nav .nav-item .nav-link:hover,
+.navbar-light .navbar-nav .nav-item.active .nav-link{
+  background: #262626;
+  color: #fff;
+}
+.navbar-light .navbar-nav .nav-item .nav-link{
+  color: #262626;
+  padding: 5px 15px;
+}
+
+body{
+  font-weight: 800;
+  background-image: url(../assets/freddie-marriage-vSchPA-YA_A-unsplash.jpg);
+  background-size: cover;
+  color: black;
+}
+
+#carouselBuddy{
+  justify-self: center;
+}
