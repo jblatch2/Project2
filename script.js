@@ -15,9 +15,7 @@ var settings = {
 // });
 
 $(document).ready(function() {
-  $(".btn").on("click", function() {
-    event.preventDefault();
-    const queryURL =
+  const queryURL =
       "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote/?rapidapi-key=350912590emshd6ab06b9aef56ecp1ddaa6jsn5bbc1034b7fd";
     var quote = $("#inQuote").val();
     $("#inQuote").append(quote);
@@ -43,5 +41,4 @@ $.ajax({
   $("#author").append(author);
 });
 
-});
 });
