@@ -87,6 +87,38 @@ h3 {
   color: white;
 }
 .glyphicon-pencil {
+
+    font-size: 35px;
+    color: white;
+    float: right;
+    margin-top: 20px;
+}
+.col-md-5{
+    margin-top: 80px;
+    box-shadow: -1px 1px 60px 10px black;
+    background: rgba(0,0,0,0.4);
+}
+.label{
+    font-weight: normal;
+    margin-top: 5px;
+    color: white;
+    font-size: 19px;
+}
+.form-control{
+    background: transparent;
+    border-radius: 0px;
+    border: 0px;
+    border-bottom: 1px solid white;
+    font-size: 18px;
+    margin-top: 15px;
+    height: 40px;
+    color: white;
+}
+
+.author{
+    color: black;
+}
+
   font-size: 35px;
   color: white;
   float: right;
@@ -113,3 +145,4 @@ h3 {
   height: 40px;
   color: white;
 }
+
