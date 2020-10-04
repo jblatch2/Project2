@@ -1,19 +1,14 @@
 // Requiring necessary npm packages
 const express = require("express");
 const session = require("express-session");
-
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
-
-// setting up handlebars
-const exphbs = require("express-handlebars");
-
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
 
 // Setting up port and requiring models for syncing
 const PORT = process.env.PORT || 8080;
 const db = require("./models");
+// const secret= require("dotenv").config();
+// console.log(secret);
 
 // Creating express app and configuring middleware needed for authentication
 const app = express();
@@ -26,8 +21,6 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
-// requiring Multer
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
