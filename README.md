@@ -9,6 +9,21 @@ Study Buddy is an app designed to help students connect with each other to set u
 - I want to to decide if I want to study virtually or in person.
 - I want to be able to set up a study group if I want.
 
+## Dependencies
+
+    "bcryptjs": "2.4.3",
+    "bootstrap": "^4.5.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.1.0",
+    "express-session": "^1.16.1",
+    "handlebars": "^4.7.6",
+    "multer": "^1.4.2",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6"
+
 ## Collaboration
 
 - Jaime Blatch - https://github.com/jblatch2
