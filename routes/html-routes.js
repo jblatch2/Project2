@@ -14,7 +14,7 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/members", isuthenticated (req, res) => {
+  app.get("/members", isAuthenticated, (req, res) => {
     res.render("members");
   });
 };

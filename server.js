@@ -28,13 +28,18 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// sets handlebars routes
+app.engine(
+  "handlebars",
+  exphbs({ defaultLayout: "main", partialsDir: __dirname + "/views/partials/" })
+);
 app.set("view engine", "handlebars");
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
+// multer
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 
 const storage = multer.diskStorage({
@@ -55,7 +60,7 @@ const fileFilter = (req, file, cb) => {
 };
 const upload = multer({ storage: storage, fileFilter: fileFilter });
 
-//Upload route
+//Upload route - multer
 app.post("/upload", upload.single("image"), (req, res, next) => {
   try {
     return res.status(201).json({
