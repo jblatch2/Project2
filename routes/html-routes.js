@@ -14,7 +14,7 @@ module.exports = function(app) {
     }
   });
 
-  app.get("/members", isuthenticated (req, res) => {
-    res.render("members");
+  app.get("/members", (req, res) => {
+    res.render("members")
   });
 };
