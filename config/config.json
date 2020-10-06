@@ -1,8 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "JumbleBum!96",
-    "database": "temp_db",
+
+    "password": "Server80808!",
+    "database": "passport_demo",
+
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
