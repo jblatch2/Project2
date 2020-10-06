@@ -1,10 +1,9 @@
-
 body {
   margin-left: 75px;
   margin-right: 75px;
 }
 
-img #logo{
+img #logo {
   margin-left: auto;
   margin-right: auto;
   display: inline-block;
@@ -24,25 +23,26 @@ img #logo{
   text-transform: uppercase;
 }
 .navbar-light .navbar-nav .nav-item .nav-link:hover,
-.navbar-light .navbar-nav .nav-item.active .nav-link{
+.navbar-light .navbar-nav .nav-item.active .nav-link {
   background: #262626;
   color: #fff;
 }
-.navbar-light .navbar-nav .nav-item .nav-link{
+.navbar-light .navbar-nav .nav-item .nav-link {
   color: #262626;
   padding: 5px 15px;
 }
 
-body{
+body {
   font-weight: 800;
-  background-image: url(../assets/freddie-marriage-vSchPA-YA_A-unsplash.jpg);
+  background-image: url(/assets/freddie-marriage-vSchPA-YA_A-unsplash.jpg);
   background-size: cover;
   color: black;
 }
 
-#carouselBuddy{
+#carouselBuddy {
   justify-self: center;
-=======
+}
+
 .profilePic {
   border-radius: 50%;
 }

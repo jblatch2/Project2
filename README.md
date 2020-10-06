@@ -43,4 +43,5 @@ This app is deployed to Heroku. To see the app:
 ### Screenshots
 
 ![](public\img\buddycards.jpg)
+
 ![](public\img\buddyrequest.jpg)
