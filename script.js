@@ -1,5 +1,5 @@
 
-
+require("dotenv").config();
 var settings = {
   async: true,
   crossDomain: true,
@@ -9,7 +9,7 @@ var settings = {
   headers: {
     "x-rapidapi-host":
       "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-    "x-rapidapi-key": "350912590emshd6ab06b9aef56ecp1ddaa6jsn5bbc1034b7fd",
+    "x-rapidapi-key": process.env.SECRET_KEY,
   },
 };
 // $.ajax(settings).done(function(response) {

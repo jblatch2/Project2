@@ -28,4 +28,8 @@ module.exports = function(app) {
     //api quote here
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
+
+  app.get("/quote", (req, res)=> {
+    res.render("quote");
+  })
 };
