@@ -6,6 +6,19 @@ module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
+  app.get("/api/quote", function(req, res) {
+    var settings = {
+
+      headers: {
+        "x-rapidapi-host":
+          "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
+        "x-rapidapi-key": process.env.SECRET_KEY,
+      }
+    };
+    axios.get("https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",settings).then(function(results){
+      res.json(results.data)
+    })
+  });
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
