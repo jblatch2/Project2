@@ -29,6 +29,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+app.get("/members", (req, res) => {
+  res.render("members", { layout: "mainmemb" });
+});
 app.set("view engine", "handlebars");
 
 // Requiring our routes
