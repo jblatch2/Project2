@@ -145,3 +145,7 @@ form {
   margin-left: 75px;
   margin-right: 75px;
 }
+
+h3 {
+  color: #000 !important;
+}
