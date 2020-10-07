@@ -1,9 +1,12 @@
 {
   "development": {
     "username": "root",
-    "password": "JumbleBum!96",
-    "database": "temp_db",
+
+    "password": "ITILfoun1!",
+    "database": "profile_DB",
+
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "test": {
@@ -11,10 +14,15 @@
     "password": null,
     "database": "database_test",
     "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable": "JAWSDB_URL",
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "port": 3306,
     "dialect": "mysql"
   }
 }
