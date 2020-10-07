@@ -1,8 +1,10 @@
 {
   "development": {
     "username": "root",
+
     "password": "ITILfoun1!",
     "database": "profile_DB",
+
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"

@@ -45,15 +45,6 @@ main {
   padding: 250px 0 200px;
 }
 
-.banner {
-  position: relative;
-  background: url(/img/background.jpg);
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
-  padding: 250px 0 200px;
-}
-
 .btnD1 {
   display: inline-block;
   margin: 1em 0 0;
@@ -108,36 +99,29 @@ h3 {
   font-size: 22px;
   color: white;
 }
-
 .glyphicon-pencil {
   font-size: 35px;
   color: white;
   float: right;
   margin-top: 20px;
 }
-
 .col-md-5 {
   margin-top: 80px;
   box-shadow: -1px 1px 60px 10px black;
   background: rgba(0, 0, 0, 0.4);
 }
-
 .label {
   font-weight: normal;
   margin-top: 5px;
   color: white;
   font-size: 19px;
 }
-
 .form-control {
-  background: transparent;
-  border-radius: 0px;
-  border: 0px;
-  border-bottom: 1px solid white;
-  font-size: 18px;
-  margin-top: 15px;
-  height: 40px;
-  color: white;
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 .author {
@@ -162,9 +146,20 @@ h3 {
 }
 
 .form-control {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  background: #fff;
+  border-radius: 0px;
+  border: 0px;
+  border-bottom: 1px solid white;
+  font-size: 18px;
+  margin-top: 15px;
+  height: 40px;
+}
+
+form {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+h3 {
+  color: #000 !important;
 }
