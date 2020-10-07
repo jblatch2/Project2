@@ -22,7 +22,7 @@ module.exports = function(app) {
         settings
       )
       .then(function(results) {
-        res.json(results.data);
+        res.render("quote",{quote:results.data});
       });
   });
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
