@@ -42,4 +42,4 @@ $(document).ready(() => {
     $("#alert").fadeIn(500);
   }
 });
-export{userData};
+
