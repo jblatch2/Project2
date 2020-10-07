@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS temp_db;
-CREATE DATABASE temp_db;
-USE temp_db;
+DROP DATABASE IF EXISTS profile_DB;
+CREATE DATABASE profile_DB;
+USE profile_DB;
 
 CREATE TABLE members
 (
