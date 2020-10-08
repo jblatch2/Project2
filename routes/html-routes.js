@@ -31,13 +31,7 @@ module.exports = function(app) {
   });
 
   app.get("/members", isAuthenticated, (req, res) => {
-    //api quote here
-    res.render("members");
-  });
-
-  app.get("/members", (req, res) => {
-    console.log("AAAARHRHRHRHRH");
-    var settings = {
+    let settings = {
       headers: {
         "x-rapidapi-host":
           "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
@@ -49,9 +43,10 @@ module.exports = function(app) {
         "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
         settings
       )
-      .then(function(results) {
+      .then((results) => {
         console.log(results.data);
         res.render("members", { quote: results.data });
       });
+    res.render("members");
   });
 };

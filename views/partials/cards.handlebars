@@ -1,23 +1,23 @@
 <div class="card">
-    <div class="card-image"> {{id}}.{{ avatar }} </div>
+    <div class="card-image"> {{ this.avatar }} </div>
     <div class="card-text">
 
-        <h2> {{id}}.{{ name }} </h2>
-        <p> {{id}}.{{ zodiac }} </p>
-        <p>{{id}}.{{ notes }}</p>
+        <h2> {{ this.name }} </h2>
+        <p> {{ this.zodiac }} </p>
+        <p>{{ this.notes }}</p>
     </div>
     <div class="card-stats">
         <div class="stat">
             <div class="value">Buddies</div>
-            <div class="type">{{id}}.{{ buddies }}</div>
+            <div class="type">{{ this.buddies }}</div>
         </div>
         <div class="stat border">
             <div class="value">Category</div>
-            <div class="type">{{id}}.{{ subject }}</div>
+            <div class="type">{{ this.subject }}</div>
         </div>
         <div class="stat">
             <div class="value">Preference</div>
-            <div class="type">{{id}}.{{ preference }}</div>
+            <div class="type">{{ this.preference }}</div>
         </div>
         <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
     </div>
