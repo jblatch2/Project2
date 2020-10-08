@@ -4,6 +4,7 @@ const passport = require("../config/passport");
 const axios = require("axios");
 console.log("hello" + db.buddyRequest);
 require("dotenv").config();
+
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
@@ -67,6 +68,15 @@ module.exports = function(app) {
     req.logout();
     res.redirect("/");
   });
+
+  // app.get("/api/cards", (req, res) => {
+  //   // res.json({
+  //   //   email: req.user.email,
+  //   //   id: req.user.id,
+  //   //   name: req.user.name,
+  //   // });
+  //   console.log("something");
+  // });
 
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {

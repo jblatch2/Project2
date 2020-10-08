@@ -31,10 +31,24 @@ module.exports = function(app) {
   //   console.log(res);
   // });
 
-  app.get("/cards", (req, res) => {
-    console.log("TEST");
-    res.render("cards");
+  // NOT WORKING
+  app.get("/api/cards", (req, res) => {
+    console.log("TEST 1: ");
+    console.log("TEST 2: ", res.json(any));
+    // res.render("cards");
+    // res.json(res);
   });
+
+  // app.get("/api/cards", (req, res) => {
+  //   db.buddyRequest
+  //     .findAll({})
+  //     })
+  //     .then((buddyRequest) => {
+  //       console.log("TEST 63");
+  //       res.json(buddyRequest);
+  //       res.render("cards", buddyRequest);
+  //     });
+  // };
 
   app.get("/buddyreq", (req, res) => {
     if (req.user) {
