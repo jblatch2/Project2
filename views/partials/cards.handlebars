@@ -1,23 +1,23 @@
 <div class="card">
-    <div class="card-image"> {{ avatar }} </div>
+    <div class="card-image"> {{id}}.{{ avatar }} </div>
     <div class="card-text">
-        <span class="date">{{ date }}</span>
-        <h2> {{ name }} </h2>
-        <p> {{ zodiac }} </p>
-        <p>{{ notes }}</p>
+
+        <h2> {{id}}.{{ name }} </h2>
+        <p> {{id}}.{{ zodiac }} </p>
+        <p>{{id}}.{{ notes }}</p>
     </div>
     <div class="card-stats">
         <div class="stat">
-            <div class="value">Buddies<sup></sup></div>
-            <div class="type">{{ size }}</div>
+            <div class="value">Buddies</div>
+            <div class="type">{{id}}.{{ buddies }}</div>
         </div>
         <div class="stat border">
             <div class="value">Category</div>
-            <div class="type">{{ category }}</div>
+            <div class="type">{{id}}.{{ subject }}</div>
         </div>
         <div class="stat">
             <div class="value">Preference</div>
-            <div class="type">{{ preference }}</div>
+            <div class="type">{{id}}.{{ preference }}</div>
         </div>
         <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
     </div>

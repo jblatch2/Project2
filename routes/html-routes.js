@@ -32,11 +32,11 @@ module.exports = function(app) {
 
   app.get("/members", isAuthenticated, (req, res) => {
     //api quote here
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+    res.render("members");
   });
 
-  app.get("/quote", (req, res)=> {
-    console.log("AAAARHRHRHRHRH")
+  app.get("/members", (req, res) => {
+    console.log("AAAARHRHRHRHRH");
     var settings = {
       headers: {
         "x-rapidapi-host":
@@ -50,8 +50,8 @@ module.exports = function(app) {
         settings
       )
       .then(function(results) {
-        console.log(results.data)
-        res.render("quote",{quote:results.data});
+        console.log(results.data);
+        res.render("members", { quote: results.data });
       });
-  })
+  });
 };
