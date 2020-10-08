@@ -8,14 +8,14 @@ $(document).ready(() => {
   const zodiacInput = $("#zodiac");
 
   // When the signup button is clicked, we validate the subject and group are not blank
-  buddyReqForm.on("submit", (event) => {
+  buddyReqForm.on("submit", event => {
     event.preventDefault();
     const buddyData = {
       notes: notesInput.val().trim(),
       subject: subjectInput.val().trim(),
       group: groupSize.val().trim(),
       meet: meetInput.val().trim(),
-      zodiac: zodiacInput.val().trim(),
+      zodiac: zodiacInput.val().trim()
     };
     console.log(buddyData);
     // if (!buddyData.notes || !buddyData.subject || !buddyData.group) {
@@ -44,7 +44,7 @@ $(document).ready(() => {
       subject: subject,
       group: group,
       meet: meet,
-      zodiac: zodiac,
+      zodiac: zodiac
     })
       .then(() => {
         window.location.replace("/members");

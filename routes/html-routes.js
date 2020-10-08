@@ -1,13 +1,20 @@
 // Requiring path to so we can use relative routes to our HTML files
-const path = require("path");
+// const path = require("path");
 const axios = require("axios");
+const db = require("../models");
 require("dotenv").config();
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
-  app.get("/main", (req, res) => {
+  app.get("/main", isAuthenticated, (req, res) => {
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.render("index");
+  });
+  app.get("/", (req, res) => {
     if (req.user) {
       res.redirect("/members");
     }
@@ -26,10 +33,10 @@ module.exports = function(app) {
     res.render("signup");
   });
 
-  // app.get("/buddyreq", (req, res) => {
-  //   res.render("buddyreq");
-  //   console.log(res);
-  // });
+  app.get("/buddyreq", isAuthenticated, (req, res) => {
+    res.render("buddyreq");
+    console.log(res);
+  });
 
   // NOT WORKING
   app.get("/api/cards", (req, res) => {
@@ -50,30 +57,43 @@ module.exports = function(app) {
   //     });
   // };
 
-  app.get("/buddyreq", (req, res) => {
-    if (req.user) {
-      res.redirect("member");
-    }
-    res.render("signup");
-  });
+  // app.get("/buddyreq", (req, res) => {
+  //   if (req.user) {
+  //     res.redirect("/members");
+  //   }
+  //   res.render("signup");
+  // });
 
   app.get("/members", isAuthenticated, (req, res) => {
-    let settings = {
-      headers: {
-        "x-rapidapi-host":
-          "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-        "x-rapidapi-key": process.env.SECRET_KEY,
-      },
-    };
-    axios
-      .get(
-        "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
-        settings
-      )
-      .then((results) => {
-        res.render("members", { quote: results.data });
-        res.render("cards");
-        res.render("members");
-      });
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.render("login");
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      const settings = {
+        headers: {
+          "x-rapidapi-host":
+            "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
+          "x-rapidapi-key": process.env.API_KEY,
+        },
+      };
+      axios
+        .get(
+          "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+          settings
+        )
+        .then((results) => {
+          db.buddyRequest.findAll({}).then((data) => {
+            console.log("data", data);
+            res.render("members", {
+              layout: "mainmemb",
+              quote: results.data,
+              user: req.user,
+              buddies: data
+            });
+          });
+        });
+    }
   });
 };

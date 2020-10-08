@@ -1,10 +1,10 @@
 //require dependencies
 // =============================================================
-let path = require("path");
+const path = require("path");
 
 //require model
 // =============================================================
-let db = require("../models");
+const db = require("../models");
 
 // Card Routes
 // =============================================================
@@ -37,9 +37,9 @@ module.exports = function(app) {
         subject: req.body.subject,
         notes: req.body.notes,
         location: req.body.location,
-        groupSize: req.body.groupSize,
+        groupSize: req.body.groupSize
       })
-      .then((buddyRequest) => {
+      .then(buddyRequest => {
         res.json(buddyRequest);
       });
   });
@@ -47,7 +47,7 @@ module.exports = function(app) {
   app.put("/buddyrequest/:id", (req, res) => {
     db.buddyRequest
       .update(req.body, { where: { id: req.params.id } })
-      .then((profile_DB) => {
+      .then(profile_DB => {
         res.json(profile_DB);
       });
   });
