@@ -28,11 +28,19 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+<<<<<<< HEAD
 // sets handlebars routes
 app.engine(
   "handlebars",
   exphbs({ defaultLayout: "main", partialsDir: __dirname + "/views/partials/" })
 );
+=======
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+app.get("/members", (req, res) => {
+  res.render("members", { layout: "mainmemb" });
+});
+>>>>>>> hbsAPIs3
 app.set("view engine", "handlebars");
 
 // Requiring our routes

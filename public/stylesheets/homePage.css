@@ -39,6 +39,7 @@ header {
 main {
   position: relative;
   background: url(/img/background.jpg);
+<<<<<<< HEAD
   min-height: 100vh;
   background-size: cover;
   background-position: center;
@@ -48,6 +49,8 @@ main {
 .banner {
   position: relative;
   background: url(/img/background.jpg);
+=======
+>>>>>>> hbsAPIs3
   min-height: 100vh;
   background-size: cover;
   background-position: center;
@@ -108,8 +111,38 @@ h3 {
   font-size: 22px;
   color: white;
 }
+<<<<<<< HEAD
 
 .glyphicon-pencil {
+=======
+.glyphicon-pencil {
+  font-size: 35px;
+  color: white;
+  float: right;
+  margin-top: 20px;
+}
+.col-md-5 {
+  margin-top: 80px;
+  box-shadow: -1px 1px 60px 10px black;
+  background: rgba(0, 0, 0, 0.4);
+}
+.label {
+  font-weight: normal;
+  margin-top: 5px;
+  color: white;
+  font-size: 19px;
+}
+.form-control {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.author {
+  color: black;
+>>>>>>> hbsAPIs3
   font-size: 35px;
   color: white;
   float: right;
@@ -130,16 +163,16 @@ h3 {
 }
 
 .form-control {
-  background: transparent;
+  background: #fff;
   border-radius: 0px;
   border: 0px;
   border-bottom: 1px solid white;
   font-size: 18px;
   margin-top: 15px;
   height: 40px;
-  color: white;
 }
 
+<<<<<<< HEAD
 .author {
   color: black;
   font-size: 35px;
@@ -167,4 +200,13 @@ h3 {
   border-color: #80bdff;
   outline: 0;
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+=======
+form {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
+h3 {
+  color: #000 !important;
+>>>>>>> hbsAPIs3
 }
