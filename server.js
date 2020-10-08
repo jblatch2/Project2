@@ -28,11 +28,11 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-// sets handlebars routes
-app.engine(
-  "handlebars",
-  exphbs({ defaultLayout: "main", partialsDir: __dirname + "/views/partials/" })
-);
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+
+app.get("/members", (req, res) => {
+  res.render("members", { layout: "mainmemb" });
+});
 app.set("view engine", "handlebars");
 
 // Requiring our routes
@@ -40,17 +40,18 @@ require("./routes/html-routes.js")(app);
 require("./routes/api-routes.js")(app);
 
 // multer
-app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
+app.use("/upload", express.static(path.join(__dirname, "/upload")));
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "uploads");
+    cb(null, "./upload");
   },
   filename: (req, file, cb) => {
     console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
+
 const fileFilter = (req, file, cb) => {
   if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
     cb(null, true);
@@ -61,7 +62,7 @@ const fileFilter = (req, file, cb) => {
 const upload = multer({ storage: storage, fileFilter: fileFilter });
 
 //Upload route - multer
-app.post("/upload", upload.single("image"), (req, res, next) => {
+app.post("/upload", upload.single("image"), (req, res) => {
   try {
     return res.status(201).json({
       message: "File uploaded successfully",
