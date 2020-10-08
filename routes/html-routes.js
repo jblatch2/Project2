@@ -22,6 +22,7 @@ module.exports = function(app) {
     res.render("login");
   });
 
+
   app.get("/signup", (req, res) => {
     res.render("signup");
   });
@@ -29,15 +30,28 @@ module.exports = function(app) {
   app.get("/buddyreq", (req, res) => {
     res.render("buddyreq");
   });
-
-  app.get("/members", isAuthenticated, (req, res) => {
-    //api quote here
-    res.sendFile(path.join(__dirname, "../public/members.html"));
+=======
+  app.get(".buddyreq", (req, res) => {
+    if (req.user) {
+      res.redirect("member");
+    }
+    res.render("signup");
   });
 
-  app.get("/quote", (req, res)=> {
-    console.log("AAAARHRHRHRHRH")
+
+  app.get("/members", isAuthenticated, (req, res) => {
+
+    let settings = {
+
+    //api quote here
+    res.render("members");
+
+  });
+
+  app.get("/members", (req, res) => {
+    console.log("AAAARHRHRHRHRH");
     var settings = {
+
       headers: {
         "x-rapidapi-host":
           "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
@@ -49,9 +63,12 @@ module.exports = function(app) {
         "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
         settings
       )
-      .then(function(results) {
-        console.log(results.data)
-        res.render("quote",{quote:results.data});
+      .then((results) => {
+        console.log(results.data);
+        res.render("members", { quote: results.data });
       });
-  })
+
+    res.render("members");
+
+  });
 };
