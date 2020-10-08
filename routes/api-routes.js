@@ -2,6 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const axios = require("axios");
+console.log(db.buddy_requests);
 require("dotenv").config();
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -21,7 +22,7 @@ module.exports = function(app) {
         settings
       )
       .then(function(results) {
-        res.render("quote",{quote:results.data});
+        res.json({quote:results.data});
       });
   });
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
@@ -38,6 +39,7 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
+      name: req.body.name
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -45,6 +47,17 @@ module.exports = function(app) {
       .catch((err) => {
         res.status(401).json(err);
       });
+  });
+
+  //Route for submitting buddy request
+  app.post("/api/buddyreq", (req, res) => {
+    db.buddy_requests.create({
+      notes: req.body.notes,
+      subject: req.body.subject,
+      group: req.body.group,
+      meet: req.body.meet,
+      zodiac: req.body.zodiac
+    });
   });
   // Route for logging user out
   app.get("/logout", (req, res) => {
@@ -62,6 +75,24 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
+        name: req.user.name
+      });
+    }
+  });
+  // Route for getting some data about our user to be used client side
+  app.get("/api/buddyreq", (req, res) => {
+    if (!req.buddy) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        notes: req.body.notes,
+        subject: req.body.subject,
+        group: req.body.group,
+        meet: req.body.meet,
+        zodiac: req.body.zodiac
       });
     }
   });

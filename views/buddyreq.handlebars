@@ -1,13 +1,13 @@
 <!-- Subject/Group size entry -->
 
-<form>
+<form class="buddyReq">
     <div class="form-group">
         <label for="exampleFormControlInput1">Subject you are studying:</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="JavaScript">
+        <input type="text" class="form-control" id="subject" placeholder="JavaScript">
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Desired study group size</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <select class="form-control" id="groupSize">
             <option>2</option>
             <option>3</option>
             <option>4</option>
@@ -17,12 +17,12 @@
     </div>
     <div class="form-group">
         <label for="exampleFormControlTextarea1">Additional notes:</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+        <textarea class="form-control" id="notes" rows="3"
             placeholder="Prefered ways of communication/pronouns/whatever you need to let your study buddies know!"></textarea>
     </div>
 
     <div class="input-group">
-        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+        <select class="custom-select" id="meet" aria-label="Example select with button addon">
             <option selected>Location Preference...</option>
             <option value="1">Zoom/Virtual</option>
             <option value="3">On-site</option>
@@ -31,7 +31,7 @@
     <br />
     <div class="form-group">
         <label for="ZodiacFormControl">Zodiac</label>
-        <select class="form-control" id="ZodiacFormControl">
+        <select class="form-control" id="zodiac">
             <option>None</option>
             <option>Aquarius</option>
             <option>Pisces</option>
@@ -48,6 +48,6 @@
         </select>
     </div>
     <br>
-    <button type="button" class="btn btn-dark">Submit Buddy Request!</button>
+    <button type="submit" class="btn btn-dark">Submit Buddy Request!</button>
 </form>
 <br><br>
