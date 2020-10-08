@@ -14,9 +14,14 @@ module.exports = function(app) {
     }
   });
 
+  app.get(".buddyreq", (req, res) => {
+    if (req.user) {
+      res.redirect("member");
+    }
+    res.render("signup");
+  });
 
   app.get("/members", isAuthenticated, (req, res) => {
     res.render("members");
-
   });
 };
