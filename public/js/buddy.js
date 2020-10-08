@@ -1,11 +1,11 @@
 $(document).ready(() => {
   // Getting references to our form and input
-  const buddyReqForm = $("form.buddy");
-  const subjectInput = $("input#subject");
-  const groupSize = $("input#groupSize");
-  const notesInput = $("input#notes");
-  const meetInput = $("input#meet");
-  const zodiacInput = $("input#zodiac");
+  const buddyReqForm = $("form.buddyReq");
+  const subjectInput = $("#subject");
+  const groupSize = $("#groupSize");
+  const notesInput = $("#notes");
+  const meetInput = $("#meet");
+  const zodiacInput = $("#zodiac");
 
   // When the signup button is clicked, we validate the subject and group are not blank
   buddyReqForm.on("submit", (event) => {
@@ -17,7 +17,7 @@ $(document).ready(() => {
       meet: meetInput.val().trim(),
       zodiac: zodiacInput.val().trim()
     };
-
+    console.log(buddyData)
     if (!buddyData.notes || !buddyData.subject || !buddyData.group) {
       return;
     }
@@ -38,8 +38,8 @@ $(document).ready(() => {
 
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
-  function createBuddy(notes, subject, group) {
-    $.post("/api/buddyreq", {
+  function createBuddy(notes, subject, group, meet, zodiac) {
+    $.post("/api/buddy_data", {
       notes: notes,
       subject: subject,
       group: group,

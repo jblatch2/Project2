@@ -2,6 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const axios = require("axios");
+console.log(db.buddy_request);
 require("dotenv").config();
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -21,7 +22,7 @@ module.exports = function(app) {
         settings
       )
       .then(function(results) {
-        res.render("quote",{quote:results.data});
+        res.json({quote:results.data});
       });
   });
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
@@ -50,7 +51,7 @@ module.exports = function(app) {
 
   //Route for submitting buddy request
   app.post("/api/buddyreq", (req, res) => {
-    db.buddy.create({
+    db.buddy_request.create({
       notes: req.body.notes,
       subject: req.body.subject,
       group: req.body.group,
