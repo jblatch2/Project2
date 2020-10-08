@@ -30,7 +30,7 @@ $(document).ready(() => {
     $.post("/api/signup", {
       name: name,
       email: email,
-      password: password,
+      password: password
     })
       .then(() => {
         window.location.replace("/members");
