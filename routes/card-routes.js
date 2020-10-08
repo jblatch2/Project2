@@ -27,6 +27,14 @@ module.exports = function(app) {
   //   });
   // });
 
+  app.get("/api/cards", (req, res) => {
+    db.buddyRequest.findAll({});
+    console.log("TEST 1: ", res.json(buddyRequest));
+    console.log("TEST 2: ");
+    // res.render("cards");
+    // res.json(res);
+  });
+
   // POST route for saving a new card
   app.post("/api/addcards", (req, res) => {
     db.buddyRequest

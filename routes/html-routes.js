@@ -2,6 +2,7 @@
 const path = require("path");
 const axios = require("axios");
 require("dotenv").config();
+let db = require("../models");
 
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
@@ -33,8 +34,9 @@ module.exports = function(app) {
 
   // NOT WORKING
   app.get("/api/cards", (req, res) => {
-    console.log("TEST 1: ");
-    console.log("TEST 2: ", res.json(any));
+    db.buddyRequest.findAll({});
+    console.log("TEST 1: ", res.json(buddyRequest));
+    console.log("TEST 2: ");
     // res.render("cards");
     // res.json(res);
   });

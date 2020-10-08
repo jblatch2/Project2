@@ -38,7 +38,8 @@ Study Buddy is an app designed to help students connect with each other to set u
 ### Installation
 
 This app is deployed to Heroku. To see the app:
-[Deployed Demo](https://project2sd.herokuapp.com/)
+[Landing Page](https://project2sd.herokuapp.com/main)
+[Members Page](https://project2sd.herokuapp.com/members)
 
 ### Screenshots
 
