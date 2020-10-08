@@ -22,6 +22,7 @@ module.exports = function(app) {
     res.render("login");
   });
 
+
   app.get("/signup", (req, res) => {
     res.render("signup");
   });
@@ -29,9 +30,28 @@ module.exports = function(app) {
   app.get("/buddyreq", (req, res) => {
     res.render("buddyreq");
   });
+=======
+  app.get(".buddyreq", (req, res) => {
+    if (req.user) {
+      res.redirect("member");
+    }
+    res.render("signup");
+  });
+
 
   app.get("/members", isAuthenticated, (req, res) => {
+
     let settings = {
+
+    //api quote here
+    res.render("members");
+
+  });
+
+  app.get("/members", (req, res) => {
+    console.log("AAAARHRHRHRHRH");
+    var settings = {
+
       headers: {
         "x-rapidapi-host":
           "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
@@ -47,6 +67,8 @@ module.exports = function(app) {
         console.log(results.data);
         res.render("members", { quote: results.data });
       });
+
     res.render("members");
+
   });
 };

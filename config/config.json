@@ -1,12 +1,13 @@
 {
   "development": {
     "username": "root",
-    "password": "JumbleBum!96",
+    "password": "ITILfound1!",
     "database": "profile_DB",
     "host": "127.0.0.1",
     "port": 3306,
     "dialect": "mysql"
   },
+
   "test": {
     "username": "root",
     "password": null,
@@ -15,11 +16,12 @@
     "port": 3306,
     "dialect": "mysql"
   },
+
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "username": "ekoltk3ped1vy8og",
+    "password": "f8f4d0ami4dhl9ce",
+    "database": "e45b49welheadyc6",
+    "host": "sm9j2j5q6c8bpgyq.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "port": 3306,
     "dialect": "mysql"
   }
