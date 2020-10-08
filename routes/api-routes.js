@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const axios = require("axios");
-console.log(db.buddy_request);
+console.log(db.buddy_requests);
 require("dotenv").config();
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -51,7 +51,7 @@ module.exports = function(app) {
 
   //Route for submitting buddy request
   app.post("/api/buddyreq", (req, res) => {
-    db.buddy_request.create({
+    db.buddy_requests.create({
       notes: req.body.notes,
       subject: req.body.subject,
       group: req.body.group,
@@ -86,7 +86,7 @@ module.exports = function(app) {
     }
   });
   // Route for getting some data about our user to be used client side
-  app.get("/api/buddy_data", (req, res) => {
+  app.get("/api/buddyreq", (req, res) => {
     if (!req.buddy) {
       // The user is not logged in, send back an empty object
       res.json({});

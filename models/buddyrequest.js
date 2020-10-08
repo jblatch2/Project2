@@ -1,6 +1,6 @@
 // Creating our Buddy Request model
 module.exports = function(sequelize, DataTypes) {
-  const buddyRequest = sequelize.define("buddy_request", {
+  const buddyRequest = sequelize.define("buddy_requests", {
     subject: {
       type: DataTypes.STRING,
       allowNull: false

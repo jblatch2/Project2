@@ -18,9 +18,9 @@ $(document).ready(() => {
       zodiac: zodiacInput.val().trim()
     };
     console.log(buddyData)
-    if (!buddyData.notes || !buddyData.subject || !buddyData.group) {
-      return;
-    }
+    // if (!buddyData.notes || !buddyData.subject || !buddyData.group) {
+    //   return;
+    // }
     // If we have an subject and group, run the signUpUser function
     createBuddy(
       buddyData.notes,
@@ -39,7 +39,7 @@ $(document).ready(() => {
   // Does a post to the signup route. If successful, we are redirected to the members page
   // Otherwise we log any errors
   function createBuddy(notes, subject, group, meet, zodiac) {
-    $.post("/api/buddy_data", {
+    $.post("/api/buddyreq", {
       notes: notes,
       subject: subject,
       group: group,
