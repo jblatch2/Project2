@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     },
     groupSize: {
       type: DataTypes.INTEGER,
-      allowNull: false
+      defaultValue: "0"
     },
     notes: {
       type: DataTypes.STRING,
@@ -15,11 +15,10 @@ module.exports = function(sequelize, DataTypes) {
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false
+      defaultValue: "Zoom"
     },
     zodiac: {
-      type: DataTypes.STRING,
-      allowNull: false
+      type: DataTypes.STRING
     }
   });
  

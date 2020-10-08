@@ -57,13 +57,7 @@ module.exports = function(app) {
       group: req.body.group,
       meet: req.body.meet,
       zodiac: req.body.zodiac
-    })
-      .then(() => {
-        res.redirect(307, "/api/buddyreq");
-      })
-      .catch((err) => {
-        res.status(401).json(err);
-      });
+    });
   });
   // Route for logging user out
   app.get("/logout", (req, res) => {
