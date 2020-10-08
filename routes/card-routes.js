@@ -10,16 +10,17 @@ let db = require("../models");
 // =============================================================
 module.exports = function(app) {
   //GET route for getting all of the cards data
-  app.get("/User/", function(req, res) {
-    db.cardsList.findAll({}).then(function(profile_DB) {
-      res.json(profile_DB);
+  app.get("/profile_DB/", (req, res) => {
+    db.cardsList.findAll({}).then((buddy_requests) => {
+      res.json(buddy_requests);
+      res.render("cards", buddy_requests);
     });
   });
 
   // POST route for saving a new card
-  app.post("/members", (req, res) => {
-    console.log(req.body.whichList);
-    db.cardsList
+  app.post("/cards", (req, res) => {
+    console.log(req.body.name);
+    db.profile_DB
       .create({
         name: req.body.name,
         avatar: req.body.avatar,
@@ -29,12 +30,12 @@ module.exports = function(app) {
         prefer: req.body.prefer,
         buddies: req.body.buddies,
       })
-      .then((profile_DB) => {
-        res.json(profile_DB);
+      .then((buddy_requests) => {
+        res.json(buddy_requests);
       });
   });
 
-  app.put("/User/:id", (req, res) => {
+  app.put("/buddyrequest/:id", (req, res) => {
     db.cardsList
       .update(req.body, { where: { id: req.params.id } })
       .then((profile_DB) => {
