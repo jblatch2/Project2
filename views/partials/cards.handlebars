@@ -1,3 +1,4 @@
+{{#each buddies}}
 <div class="card">
     <div class="card-image"> {{ this.avatar }} </div>
     <div class="card-text">
@@ -5,6 +6,7 @@
         <h2> {{ this.name }} </h2>
         <p> {{ this.zodiac }} </p>
         <p>{{ this.notes }}</p>
+        <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
     </div>
     <div class="card-stats">
         <div class="stat">
@@ -19,6 +21,7 @@
             <div class="value">Preference</div>
             <div class="type">{{ this.preference }}</div>
         </div>
-        <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
+
     </div>
 </div>
+{{/each}}

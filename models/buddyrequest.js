@@ -1,6 +1,6 @@
 // Creating our Buddy Request model
 module.exports = function(sequelize, DataTypes) {
-  const buddyRequest = sequelize.define("buddy_requests", {
+  const buddyRequest = sequelize.define("buddyRequest", {
     subject: {
       type: DataTypes.STRING,
       allowNull: false
@@ -21,7 +21,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     }
   });
- 
+
   // Hooks are automatic methods that run during various phases of the User Model lifecycle
   // In this case, before a User is created, we will automatically hash their password
   return buddyRequest;

@@ -1,44 +1,53 @@
 //require dependencies
 // =============================================================
-let path = require("path");
+const path = require("path");
 
 //require model
 // =============================================================
-let db = require("../models");
+const db = require("../models");
 
 // Card Routes
 // =============================================================
 module.exports = function(app) {
-  //GET route for getting all of the cards data
-  app.get("/profile_DB/", (req, res) => {
-    db.cardsList.findAll({}).then((buddy_requests) => {
-      res.json(buddy_requests);
-      res.render("cards", buddy_requests);
-    });
-  });
+  // app.get("/api/cards", (req, res) => {
+  //   db.buddyRequest.findAll({
+  //     where {
+  //       name: req.params.name,
+  //       avatar: req.params.avatar,
+  //       zodiac: req.params.zodiac,
+  //       subject: req.params.subject,
+  //       notes: req.params.notes,
+  //       location: req.params.location,
+  //       groupSize: req.params.groupSize,
+  //     }
+  //   }).then((buddyRequest) => {
+  //     console.log("TEST 63")
+  //     res.json(buddyRequest);
+  //     res.render("cards", buddyRequest);
+  //   });
+  // });
 
   // POST route for saving a new card
-  app.post("/cards", (req, res) => {
-    console.log(req.body.name);
-    db.profile_DB
+  app.post("/api/addcards", (req, res) => {
+    db.buddyRequest
       .create({
         name: req.body.name,
         avatar: req.body.avatar,
         zodiac: req.body.zodiac,
         subject: req.body.subject,
         notes: req.body.notes,
-        prefer: req.body.prefer,
-        buddies: req.body.buddies,
+        location: req.body.location,
+        groupSize: req.body.groupSize
       })
-      .then((buddy_requests) => {
-        res.json(buddy_requests);
+      .then(buddyRequest => {
+        res.json(buddyRequest);
       });
   });
 
   app.put("/buddyrequest/:id", (req, res) => {
-    db.cardsList
+    db.buddyRequest
       .update(req.body, { where: { id: req.params.id } })
-      .then((profile_DB) => {
+      .then(profile_DB => {
         res.json(profile_DB);
       });
   });

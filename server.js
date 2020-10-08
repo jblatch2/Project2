@@ -7,8 +7,11 @@ const path = require("path");
 const passport = require("./config/passport");
 
 // setting up handlebars
+const _handlebars = require("handlebars");
+const {
+  allowInsecurePrototypeAccess
+} = require("@handlebars/allow-prototype-access");
 const exphbs = require("express-handlebars");
-
 // setting up multer
 const multer = require("multer");
 
@@ -28,11 +31,13 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-
-app.get("/members", (req, res) => {
-  res.render("members", { layout: "mainmemb" });
-});
+app.engine(
+  "handlebars",
+  exphbs({
+    defaultLayout: "main",
+    handlebars: allowInsecurePrototypeAccess(_handlebars),
+  })
+);
 app.set("view engine", "handlebars");
 
 // Requiring our routes

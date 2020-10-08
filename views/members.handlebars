@@ -1,10 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
-            <h2>Welcome <span class="member-name"> {{ this.name }} </span></h2>
-
-
-            <div class="inQuote">{{ quote.text }}</div>
+            <h2>Welcome <span class="member-name"> {{ user.email }} </span></h2>
+            <div class="inQuote2">{{ quote.text }}</div>
             <div class="author">{{ quote.author }}</div>
             <br>
 
@@ -14,21 +12,59 @@
 <hr>
 <br>
 <!-- place cards here -->
+
 <div class="container">
     <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+        <div class="col-sm-5 ">
             <h3 id="budReq">Buddy Requests</h3>
             <br />
-            {{#each cards}}
 
-            {{/each}}
+            <!-- CARDS -->
 
-        </div>
+            {{!-- {{> cards buddies }} --}}
+
+{{#each buddies}}
+            <div class="card">
+    <div class="card-image"> {{ this.avatar }} </div>
+    <div class="card-text">
+
+        <h2> {{ this.name }} </h2>
+        <p> {{ this.zodiac }} </p>
+        <p>{{ this.notes }}</p>
+        <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
     </div>
+    <div class="card-stats">
+        <div class="stat">
+            <div class="value">Buddies</div>
+            <div class="type">{{ this.buddies }}</div>
+        </div>
+        <div class="stat border">
+            <div class="value">Category</div>
+            <div class="type">{{ this.subject }}</div>
+        </div>
+        <div class="stat">
+            <div class="value">Preference</div>
+            <div class="type">{{ this.preference }}</div>
+        </div>
+
+    </div>
+</div>
+{{/each}}
+
+
+
+            </div>
+        </div>
+
+
+
+
+    </div>
+</div>
 </div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/members.js"></script>
 <!-- Quote SCRIPT SHOULD BE HERE -->
-<script src="js/script.js"></script>
+{{!-- <script src="js/script.js"></script> --}}
