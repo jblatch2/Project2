@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 const axios = require("axios");
-console.log(db.buddy_requests);
+console.log("hello" + db.buddyRequest);
 require("dotenv").config();
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -22,9 +22,10 @@ module.exports = function(app) {
         settings
       )
       .then(function(results) {
-        res.json({quote:results.data});
+        res.json({ quote: results.data });
       });
   });
+
   app.post("/api/login", passport.authenticate("local"), (req, res) => {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
@@ -32,6 +33,7 @@ module.exports = function(app) {
       id: req.user.id,
     });
   });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -39,7 +41,7 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password,
-      name: req.body.name
+      name: req.body.name,
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -51,19 +53,21 @@ module.exports = function(app) {
 
   //Route for submitting buddy request
   app.post("/api/buddyreq", (req, res) => {
-    db.buddy_requests.create({
+    db.buddyRequest.create({
       notes: req.body.notes,
       subject: req.body.subject,
       group: req.body.group,
       meet: req.body.meet,
-      zodiac: req.body.zodiac
+      zodiac: req.body.zodiac,
     });
   });
+
   // Route for logging user out
   app.get("/logout", (req, res) => {
     req.logout();
     res.redirect("/");
   });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", (req, res) => {
     if (!req.user) {
@@ -75,10 +79,11 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        name: req.user.name
+        name: req.user.name,
       });
     }
   });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/buddyreq", (req, res) => {
     if (!req.buddy) {
@@ -92,7 +97,7 @@ module.exports = function(app) {
         subject: req.body.subject,
         group: req.body.group,
         meet: req.body.meet,
-        zodiac: req.body.zodiac
+        zodiac: req.body.zodiac,
       });
     }
   });

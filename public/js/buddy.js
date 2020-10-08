@@ -15,9 +15,9 @@ $(document).ready(() => {
       subject: subjectInput.val().trim(),
       group: groupSize.val().trim(),
       meet: meetInput.val().trim(),
-      zodiac: zodiacInput.val().trim()
+      zodiac: zodiacInput.val().trim(),
     };
-    console.log(buddyData)
+    console.log(buddyData);
     // if (!buddyData.notes || !buddyData.subject || !buddyData.group) {
     //   return;
     // }
@@ -44,10 +44,10 @@ $(document).ready(() => {
       subject: subject,
       group: group,
       meet: meet,
-      zodiac: zodiac
+      zodiac: zodiac,
     })
       .then(() => {
-        window.location.replace("/quote");
+        window.location.replace("/members");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);

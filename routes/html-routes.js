@@ -26,11 +26,17 @@ module.exports = function(app) {
     res.render("signup");
   });
 
-  app.get("/buddyreq", (req, res) => {
-    res.render("buddyreq");
+  // app.get("/buddyreq", (req, res) => {
+  //   res.render("buddyreq");
+  //   console.log(res);
+  // });
+
+  app.get("/cards", (req, res) => {
+    console.log("TEST");
+    res.render("cards");
   });
 
-  app.get(".buddyreq", (req, res) => {
+  app.get("/buddyreq", (req, res) => {
     if (req.user) {
       res.redirect("member");
     }
@@ -51,8 +57,8 @@ module.exports = function(app) {
         settings
       )
       .then((results) => {
-        console.log(results.data);
         res.render("members", { quote: results.data });
+        res.render("cards");
         res.render("members");
       });
   });
