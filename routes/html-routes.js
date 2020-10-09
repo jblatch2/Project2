@@ -27,10 +27,9 @@ module.exports = function(app) {
     res.render("signup");
   });
 
-  // app.get("/buddyreq", (req, res) => {
-  //   res.render("buddyreq");
-  //   console.log(res);
-  // });
+  app.get("/buddyreq", (req, res) => {
+    res.render("buddyreq");
+  });
 
   // NOT WORKING
   app.get("/api/cards", (req, res) => {
