@@ -164,3 +164,8 @@ form {
 h3 {
   color: #000 !important;
 }
+
+.inQuote2 {
+  font-size: 35px;
+  font-style: italic;
+}
