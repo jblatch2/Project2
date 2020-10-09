@@ -42,6 +42,7 @@ This app is deployed to Heroku. To see the app:
 
 ### Screenshots
 
-![](public\img\buddycards.jpg)
-
-![](public\img\buddyrequest.jpg)
+![signup](https://user-images.githubusercontent.com/5247408/95537052-dd308680-09a9-11eb-9ff3-e0f3cbecfab4.jpg)
+![request](https://user-images.githubusercontent.com/5247408/95537056-df92e080-09a9-11eb-8798-ab4815adcd67.jpg)
+![LandingPage](https://user-images.githubusercontent.com/5247408/95537059-e0c40d80-09a9-11eb-9882-18cd673b349b.jpg)
+![Study Buddies](https://user-images.githubusercontent.com/5247408/95537109-123cd900-09aa-11eb-87ef-815c8ea750d9.png)
