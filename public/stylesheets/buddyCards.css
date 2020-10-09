@@ -125,7 +125,7 @@
 }
 .card-image {
   grid-area: image;
-  background: url("../assets/profile.jpg");
+  background: url("/img/StudyBuddy-Logo-md.png");
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   background-size: cover;

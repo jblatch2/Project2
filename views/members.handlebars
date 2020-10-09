@@ -23,43 +23,43 @@
 
             {{!-- {{> cards buddies }} --}}
 
-{{#each buddies}}
+            {{#each buddies}}
             <div class="card">
-    <div class="card-image"> {{ this.avatar }} </div>
-    <div class="card-text">
+                <div class="card-image"> {{ this.avatar }} </div>
+                <div class="card-text">
 
-        <h2> {{ this.name }} </h2>
-        <p> {{ this.zodiac }} </p>
-        <p>{{ this.notes }}</p>
-        <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
-    </div>
-    <div class="card-stats">
-        <div class="stat">
-            <div class="value">Buddies</div>
-            <div class="type">{{ this.buddies }}</div>
-        </div>
-        <div class="stat border">
-            <div class="value">Category</div>
-            <div class="type">{{ this.subject }}</div>
-        </div>
-        <div class="stat">
-            <div class="value">Preference</div>
-            <div class="type">{{ this.preference }}</div>
-        </div>
+                    <h2> {{ this.name }} </h2>
+                    <h3> {{ this.zodiac }} </h3>
+                    <h4>{{ this.notes }}</h4>
+                    <div><button id="reqSubmit" type="button" class="btn btn-primary">Let's Study!</button></div>
+                </div>
+                <div class="card-stats">
+                    <div class="stat">
+                        <div class="value">Buddies</div>
+                        <div class="type">{{ this.buddies }}</div>
+                    </div>
+                    <div class="stat border">
+                        <div class="value">Category</div>
+                        <div class="type">{{ this.subject }}</div>
+                    </div>
+                    <div class="stat">
+                        <div class="value">Preference</div>
+                        <div class="type">{{ this.preference }}</div>
+                    </div>
 
-    </div>
-</div>
-{{/each}}
-
-
-
+                </div>
             </div>
+            {{/each}}
+
+
+
         </div>
-
-
-
-
     </div>
+
+
+
+
+</div>
 </div>
 </div>
 
