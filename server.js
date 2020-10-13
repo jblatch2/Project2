@@ -35,7 +35,7 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(_handlebars),
+    handlebars: allowInsecurePrototypeAccess(_handlebars)
   })
 );
 app.set("view engine", "handlebars");
