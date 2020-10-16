@@ -75,7 +75,7 @@ module.exports = function(app) {
         headers: {
           "x-rapidapi-host":
             "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-          "x-rapidapi-key": process.env.SECRET_KEY
+          "x-rapidapi-key": process.env.API_KEY
         },
       };
       axios

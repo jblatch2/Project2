@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "Server80808!",
+    "password": "JumbleBum!96",
 
     "database": "profile_DB",
     "host": "127.0.0.1",
@@ -20,9 +20,10 @@
   },
 
   "production": {
+    "use_env_variable": "JAWSDB_URL",
     "username": "thfmccslmt082839",
     "password": "lsqbypoxex8hixko",
     "database": "eenjidnelqu3kots",
     "host": "f2fbe0zvg9j8p9ng.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
     "dialect": "mysql"
-}
+}}
