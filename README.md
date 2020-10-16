@@ -34,6 +34,7 @@ Study Buddy is an app designed to help students connect with each other to set u
 ### Links
 
 [Github Repo](https://github.com/jblatch2/Project2)
+[Heroku App](https://studdybuddyahasjbjt.herokuapp.com/)
 
 ### Installation
 
