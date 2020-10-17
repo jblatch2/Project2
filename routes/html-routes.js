@@ -69,31 +69,33 @@ module.exports = function(app) {
       // The user is not logged in, send back an empty object
       res.render("login");
     } else {
+      if (process.env.API_KEY !== undefined) {
       // Otherwise send back the user's email and id
       // Sending back a password, even a hashed password, isn't a good idea
-      const settings = {
-        headers: {
-          "x-rapidapi-host":
+        const settings = {
+          headers: {
+            "x-rapidapi-host":
             "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
-          "x-rapidapi-key": process.env.API_KEY
-        },
-      };
-      axios
-        .get(
-          "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
-          settings
-        )
-        .then((results) => {
-          db.buddyRequest.findAll({}).then((data) => {
-            console.log("data", data);
-            res.render("members", {
-              layout: "mainmemb",
-              quote: results.data,
-              user: req.user,
-              buddies: data
+            "x-rapidapi-key": process.env.API_KEY
+          }
+        };
+        axios
+          .get(
+            "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
+            settings
+          )
+          .then((results) => {
+            db.buddyRequest.findAll({}).then((data) => {
+              console.log("data", data);
+              res.render("members", {
+                layout: "mainmemb",
+                quote: results.data,
+                user: req.user,
+                buddies: data
+              });
             });
           });
-        });
+      }
     }
   });
 };

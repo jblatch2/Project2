@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
+const compression = require('compression');
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -76,6 +77,8 @@ app.post("/upload", upload.single("image"), (req, res) => {
     console.error(error);
   }
 });
+
+app.use(compression());
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync().then(() => {
