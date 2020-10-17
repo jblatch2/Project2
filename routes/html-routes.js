@@ -95,6 +95,14 @@ module.exports = function(app) {
               });
             });
           });
+      } else {
+        db.buddyRequest.findAll({}).then((data) => {
+          console.log("data", data);
+          res.render("members", {
+            layout: "mainmemb",
+            user: req.user,
+            buddies: data
+        }
       }
     }
   });
