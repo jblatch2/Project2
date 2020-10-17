@@ -91,7 +91,7 @@ module.exports = function(app) {
       res.json({
         email: req.user.email,
         id: req.user.id,
-        name: req.user.name,
+        name: req.user.name
       });
     }
   });
@@ -109,7 +109,7 @@ module.exports = function(app) {
         subject: req.body.subject,
         group: req.body.group,
         meet: req.body.meet,
-        zodiac: req.body.zodiac,
+        zodiac: req.body.zodiac
       });
     }
   });

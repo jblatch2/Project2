@@ -1,6 +1,6 @@
 //require dependencies
 // =============================================================
-const path = require("path");
+// const path = require("path");
 
 //require model
 // =============================================================
@@ -47,8 +47,8 @@ module.exports = function(app) {
   app.put("/buddyrequest/:id", (req, res) => {
     db.buddyRequest
       .update(req.body, { where: { id: req.params.id } })
-      .then(profile_DB => {
-        res.json(profile_DB);
+      .then(profileDB => {
+        res.json(profileDB);
       });
   });
 };

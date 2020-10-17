@@ -70,12 +70,12 @@ module.exports = function(app) {
       res.render("login");
     } else {
       if (process.env.API_KEY !== undefined) {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
         const settings = {
           headers: {
             "x-rapidapi-host":
-            "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
+              "quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com",
             "x-rapidapi-key": process.env.API_KEY
           }
         };
@@ -84,8 +84,8 @@ module.exports = function(app) {
             "https://quotes-inspirational-quotes-motivational-quotes.p.rapidapi.com/quote?token=ipworld.info",
             settings
           )
-          .then((results) => {
-            db.buddyRequest.findAll({}).then((data) => {
+          .then(results => {
+            db.buddyRequest.findAll({}).then(data => {
               console.log("data", data);
               res.render("members", {
                 layout: "mainmemb",
@@ -96,13 +96,14 @@ module.exports = function(app) {
             });
           });
       } else {
-        db.buddyRequest.findAll({}).then((data) => {
+        db.buddyRequest.findAll({}).then(data => {
           console.log("data", data);
           res.render("members", {
             layout: "mainmemb",
             user: req.user,
             buddies: data
-        }
+          });
+        });
       }
     }
   });

@@ -2,7 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
-const compression = require('compression');
+const compression = require("compression");
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -37,7 +37,7 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
-    handlebars: allowInsecurePrototypeAccess(_handlebars),
+    handlebars: allowInsecurePrototypeAccess(_handlebars)
   })
 );
 app.set("view engine", "handlebars");
@@ -56,7 +56,7 @@ const storage = multer.diskStorage({
   filename: (req, file, cb) => {
     console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
-  },
+  }
 });
 
 const fileFilter = (req, file, cb) => {
@@ -72,7 +72,7 @@ const upload = multer({ storage: storage, fileFilter: fileFilter });
 app.post("/upload", upload.single("image"), (req, res) => {
   try {
     return res.status(201).json({
-      message: "File uploaded successfully",
+      message: "File uploaded successfully"
     });
   } catch (error) {
     console.error(error);
