@@ -2,13 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const path = require("path");
-<<<<<<< HEAD
 const compression = require('compression');
-=======
-const compression = require("compression");
-
-
->>>>>>> 48e3f241b6339ef6b87d368714ad45a20e5245f0
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
